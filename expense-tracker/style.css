@@ -1,0 +1,393 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --bg-soft: #334155;
+
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+
+    --text-main: #f8fafc;
+    --text-secondary: #cbd5f5;
+    --text-muted: #94a3b8;
+
+    --border: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.25s ease;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+p, small {
+    color: var(--text-secondary);
+}
+
+label {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+.app {
+    display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    padding: 25px 20px;
+    background: #020617;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-muted);
+}
+
+/* HOVER */
+.menu a:hover {
+    background: rgba(99,102,241,0.1);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ACTIVE */
+.menu a.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* LOGOUT */
+.logout {
+    margin-top: auto;
+    color: #ef4444;
+}
+
+.logout:hover {
+    background: rgba(239,68,68,0.1);
+}
+
+/* =========================
+   MAIN
+========================= */
+.main {
+    flex: 1;
+    padding: 25px;
+    animation: fadeSlide 0.6s ease;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.card p {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* =========================
+   FORM
+========================= */
+.form-box {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-box h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.form-box form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.form-box input {
+    background: var(--bg-soft);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.form-box input::placeholder {
+    color: var(--text-muted);
+}
+
+/* BUTTON */
+button {
+    background: var(--primary);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CHART
+========================= */
+.chart-box {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.chart-box h3 {
+    color: white;
+}
+
+/* =========================
+   TABLE
+========================= */
+.table-box {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+}
+
+td {
+    color: var(--text-secondary);
+    padding: 10px;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* DELETE */
+.delete-btn {
+    background: #ef4444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+/* =========================
+   AUTH PAGE
+========================= */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, #0f172a, #0ea5e9, #22c55e);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+}
+
+.auth-box {
+    position: relative;
+    z-index: 2;
+    width: 360px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0f172a;
+}
+
+/* =========================
+   EXTRA
+========================= */
+.section-title {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* =========================
+   PREMIUM EFFECTS
+========================= */
+
+/* Glass cards */
+.card, .chart-box, .form-box {
+    backdrop-filter: blur(12px);
+    background: rgba(30,41,59,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Glow hover */
+.card:hover {
+    box-shadow: 0 0 25px rgba(99,102,241,0.4);
+}
+
+/* Smooth page animation */
+.main {
+    animation: fadeSlide 0.6s ease;
+}
+
+/* Chart glow */
+canvas {
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* Titles */
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.page-subtitle {
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+button:hover {
+    box-shadow: 0 8px 25px rgba(99,102,241,0.5);
+}
